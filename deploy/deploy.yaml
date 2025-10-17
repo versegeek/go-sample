@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-first
+  name: go-app-sample
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: go-first
+      app: go-app-sample
   template:
     metadata:
       labels:
-        app: go-first
+        app: go-app-sample
     spec:
       containers:
-        - name: go-first-container
-          image: docker.io/itechzero/go-first:latest
+        - name: go-app-sample
+          image: docker.io/itechzero/go-app-sample:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -22,14 +22,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: go-first
+  name: go-app-sample
   labels:
-    app: go-first
+    app: go-app-sample
 spec:
   selector:
-    app: go-first
+    app: go-app-sample
   ports:
-    - name: go-first
+    - name: go-app-sample
       protocol: TCP
       port: 8080
       targetPort: 8080
@@ -39,12 +39,12 @@ spec:
 #apiVersion: networking.k8s.io/v1
 #kind: Ingress
 #metadata:
-#  name: go-first
+#  name: go-app-sample
 #  annotations:
 #    ingress.kubernetes.io/rewrite-target: /
 #    kubernetes.io/ingress.class: nginx
 #spec:
-#  ingressClassName: go-first
+#  ingressClassName: go-app-sample
 #  rules:
 #    - host: "foo.bar.com"
 #      http:
@@ -53,6 +53,6 @@ spec:
 #            path: "/first"
 #            backend:
 #              service:
-#                name: go-first
+#                name: go-app-sample
 #                port:
 #                  number: 8080

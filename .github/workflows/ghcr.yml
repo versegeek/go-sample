@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Image to GitHub Container Registry
 
 on:
 #  push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  IMAGE_TAG: ${{ secrets.DOCKER_HUB_IMAGE_REPO }}:latest
+  IMAGE_TAG: ${{ vars.DOCKER_HUB_IMAGE_REPO }}:latest
 
 jobs:
   docker:
@@ -14,7 +14,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

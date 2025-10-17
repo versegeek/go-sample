@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	authv1 "github.com/versegeek/verse-proto-go/gen/auth/v1"
+	authv1 "github.com/versegeek/go-generated/gen/proto/auth/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

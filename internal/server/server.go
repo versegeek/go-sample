@@ -47,8 +47,6 @@ func (s *Server) Run() error {
 		ReadTimeout: 3 * time.Second,
 	}
 
-	// authServerv1.RegisterHandlers(s.router, s.handler)
-
 	message := fmt.Sprintf("[Server] 🚀 Gin Server is running, port: [%s]", config.GetConfig().ServerPort)
 	logrus.Info(message)
 	s.SetRunning(true)

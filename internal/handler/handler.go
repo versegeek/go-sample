@@ -1,9 +1,9 @@
 package handler
 
 import (
-	authServerv1 "github.com/versegeek/go-skeleton/api/oauth2"
+	authv1 "github.com/versegeek/go-generated/gen/proto/auth/v1"
+	oauth2V1 "github.com/versegeek/go-generated/gen/rest/oauth2/v1"
 	"github.com/versegeek/go-skeleton/internal/service"
-	authv1 "github.com/versegeek/verse-proto-go/gen/auth/v1"
 )
 
 // var _ Handler = (*handler)(nil)
@@ -12,14 +12,14 @@ type (
 	Handler interface {
 		OAuth2Handler
 		VersionHandler
-		// authv1.ClientAPIServer
-		// authServerv1.ServerInterface
+		authv1.ClientAPIServer
+		oauth2V1.ServerInterface
 	}
 
 	handler struct {
 		service service.IService
 		authv1.UnimplementedClientAPIServer
-		authServerv1.ServerInterfaceWrapper
+		oauth2V1.ServerInterfaceWrapper
 	}
 )
 
