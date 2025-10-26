@@ -10,7 +10,7 @@ require (
 	github.com/spf13/viper v1.21.0
 	github.com/versegeek/go-generated v0.0.0-20251026032623-ad8f058d8274
 	github.com/versegeek/toolkit v0.0.0-20251015074426-36c39b3c8d14
-	golang.org/x/oauth2 v0.30.0
+	golang.org/x/oauth2 v0.32.0
 	google.golang.org/grpc v1.76.0
 )
 
